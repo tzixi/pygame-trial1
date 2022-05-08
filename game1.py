@@ -6,6 +6,9 @@ pygame.init()
 screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('Runner')
 
+#controls framerate
+clock = pygame.time.Clock()
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -14,6 +17,8 @@ while True:
     #draw all of our elements
     #update everything
     pygame.display.update() #updates the display
+    clock.tick(60) #fps
+
 
 
 
