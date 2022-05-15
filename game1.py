@@ -45,6 +45,19 @@ def player_animation():
     # player walking animation if on floor
     # player jump animation if not on floor
 
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load('graphics/player/player_walk_1.png').convert.alpha()
+        self.rect = self.image.get_rect(midbottom =(200, 300))
+        self.gravity = 0
+
+    def player_input(self):
+        if keys[pygame.K_SPACE] and self.rect.bottom >= 300:
+            self.gravity = -20
+
+    def apply_gravity(self):
+        self_gravity += 1
 
 #initializing pygame
 pygame.init()
